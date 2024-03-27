@@ -6,6 +6,8 @@
 
 ## 👋 Meet the Team
 
+> "Great things in business are never done by one person; they're done by a team of people." – Steve Jobs
+
 - **Tobias** - Passionate about data and its power to change the world.
 - **Sascha** - A wizard in data analysis and visualization.
 - **Florian** - Enthusiastic about machine learning and its applications in solving real-world problems.
