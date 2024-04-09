@@ -1,3 +1,12 @@
+# Libraries
+import os
+import json
+import urllib
+import requests
+import pandas as pd
+from math import radians, cos, sin, sqrt, atan2
+
+
 def get_distance_to_station(Latitude, Longitude):
     """
     This function determines the closesd trainstation based on the input coordinates and returns the distance between the given Point and the nearest station.
