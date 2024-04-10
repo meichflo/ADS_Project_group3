@@ -13,6 +13,8 @@ def get_distance_to_station(Latitude, Longitude):
     NOTICE: Assumes that the input Points are in WGS84 projection (lat/lon).
     """
     url = "https://nominatim.openstreetmap.org/reverse"
+    if Latitude is None or Longitude is None:
+        return "No coordinates found"
     params = {
         'format': 'json',
         'lat': Latitude,
@@ -34,9 +36,12 @@ def get_distance_to_station(Latitude, Longitude):
         'type': 'station',
         'query': Town
     }
-    data = requests.get(url, params=params).json()
-    station_lat = data["stations"][0]["coordinate"]["x"]
-    station_lon = data["stations"][0]["coordinate"]["y"]
+    try:
+        data = requests.get(url, params=params).json()
+        station_lat = data["stations"][0]["coordinate"]["x"]
+        station_lon = data["stations"][0]["coordinate"]["y"]
+    except (IndexError, KeyError):
+        return "No station found"
 
     # Calculate the distance between the two points with pythagoras
     # Can not apply pythagoras directly, because the earth is not flat

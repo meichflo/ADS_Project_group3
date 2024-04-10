@@ -10,7 +10,6 @@ def get_coordinates(address):
     """Takes an address as an argument.
     Returns the latitude and longitude of the address.
     Returns a tuple of floats in the mentioned order."""
-    print("Getting coordinates for: ", address)
     base_url= "https://api3.geo.admin.ch/rest/services/api/SearchServer?"
     parameters = {"searchText": address,
                 "origins": "address",
@@ -22,5 +21,5 @@ def get_coordinates(address):
         Latitude = data['results'][0]['attrs']['lat']
         Longitude = data['results'][0]['attrs']['lon']
     except (IndexError, KeyError):
-        return None, None
+        Latitude, Longitude = None, None
     return Latitude, Longitude  # return a tuple
