@@ -12,6 +12,7 @@ def get_distance_to_station(Latitude, Longitude):
     This function determines the closesd trainstation based on the input coordinates and returns the distance between the given Point and the nearest station.
     NOTICE: Assumes that the input Points are in WGS84 projection (lat/lon).
     """
+    print("1. Calculating nearest station for coordinates", Latitude, Longitude)
     url = "https://nominatim.openstreetmap.org/reverse"
     if Latitude is None or Longitude is None:
         return "No coordinates found"
@@ -30,7 +31,7 @@ def get_distance_to_station(Latitude, Longitude):
         Town = data['address']['city']
     else:
         return "No town found"
-    
+    print("2. Found town", Town)
     url = "http://transport.opendata.ch/v1/locations"
     params = {
         'type': 'station',
@@ -42,7 +43,7 @@ def get_distance_to_station(Latitude, Longitude):
         station_lon = data["stations"][0]["coordinate"]["y"]
     except (IndexError, KeyError):
         return "No station found"
-
+    print(type(Latitude), type(station_lat), type(Longitude), type(station_lon))
     # Calculate the distance between the two points with pythagoras
     # Can not apply pythagoras directly, because the earth is not flat
     # Convert latitude and longitude to radians
@@ -55,5 +56,5 @@ def get_distance_to_station(Latitude, Longitude):
     c = 2 * atan2(sqrt(a), sqrt(1-a))
     radius_of_earth_km = 6371.0
     distance = radius_of_earth_km * c
-
+    print("3. Calculated distance to station:", distance)
     return distance
