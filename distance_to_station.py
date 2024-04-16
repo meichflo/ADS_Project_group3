@@ -13,9 +13,9 @@ def get_distance_to_station(Latitude, Longitude):
     NOTICE: Assumes that the input Points are in WGS84 projection (lat/lon).
     """
     # Get the town of the given coordinates
-    url = "https://nominatim.openstreetmap.org/reverse"
     if Latitude is None or Longitude is None:
         return "No coordinates found"
+    url = "https://nominatim.openstreetmap.org/reverse"
     params = {
         'format': 'json',
         'lat': Latitude,
