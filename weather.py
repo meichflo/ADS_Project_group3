@@ -9,7 +9,7 @@ one_year_ago = today - timedelta(days=365)
 def get_sunshine_duration(latitude, longitude):
     """Get the average sunshine duration for the past year.
     Return in seconds."""
-    print("Getting sunshine duration data for", type(latitude), longitude)
+    print("Getting sunshine duration data for", latitude, longitude)
     # Check if latitude and longitude are valid
     if latitude is None or longitude is None or math.isnan(latitude) or math.isnan(longitude):
         return None
