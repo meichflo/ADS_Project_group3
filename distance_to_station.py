@@ -14,7 +14,7 @@ def get_distance_to_station(Latitude, Longitude):
     """
     # Get the town of the given coordinates
     if Latitude is None or Longitude is None:
-        return "No coordinates found"
+        return None
     url = "https://nominatim.openstreetmap.org/reverse"
     params = {
         'format': 'json',
@@ -30,7 +30,7 @@ def get_distance_to_station(Latitude, Longitude):
     elif 'address' in data and 'city' in data['address']:
         Town = data['address']['city']
     else:
-        return "No town found"
+        return None
     url = "http://transport.opendata.ch/v1/locations"
     params = {
         'type': 'station',
@@ -43,10 +43,10 @@ def get_distance_to_station(Latitude, Longitude):
         station_lat = data["stations"][0]["coordinate"]["x"]
         station_lon = data["stations"][0]["coordinate"]["y"]
     except (IndexError, KeyError):
-        return "No station found"
+        return None
     # If no station is found, return "No station found"
     if station_lat is None or station_lon is None: 
-        return "No station found"
+        return None
 
     # Convert latitude and longitude to radians
     lat1, lon1, lat2, lon2 = map(radians, [Latitude, Longitude, station_lat, station_lon])
