@@ -1,6 +1,7 @@
 import requests
 from datetime import date, timedelta
 import math
+import time as time
 
 # Dates setup
 today = date.today()
@@ -10,6 +11,9 @@ def get_sunshine_duration(latitude, longitude):
     """Get the average sunshine duration for the past year.
     Return in seconds."""
     print("Getting sunshine duration data for", latitude, longitude)
+
+    time.sleep(0.2)
+
     # Check if latitude and longitude are valid
     if latitude is None or longitude is None or math.isnan(latitude) or math.isnan(longitude):
         return None
@@ -25,8 +29,22 @@ def get_sunshine_duration(latitude, longitude):
     }
     # Fetch data
     response = requests.get(url, params=params).json()
-    sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
+
+    if 'daily' in response and 'sunshine_duration' in response['daily']:
+        sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
+        # Calculate and print average if there is any sunshine duration data
+        if sunshine_duration:
+            average = sum(sunshine_duration) / len(sunshine_duration)
+            return average
+        else:
+            return None
+    else:
+        # Print/log error or handle the missing key scenario
+        print("Error: 'daily' or 'sunshine_duration' key is missing in the response.")
+        return None
+    
+    #sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
 
     # Calculate and print average
-    average = sum(sunshine_duration) / len(sunshine_duration)
-    return average
+    #average = sum(sunshine_duration) / len(sunshine_duration)
+    #return average
