@@ -12,7 +12,7 @@ def get_sunshine_duration(latitude, longitude):
     Return in seconds."""
     print("Getting sunshine duration data for", latitude, longitude)
 
-    time.sleep(0.2)
+    time.sleep(0.2) # Sleep for 0.2 seconds to avoid rate limiting
 
     # Check if latitude and longitude are valid
     if latitude is None or longitude is None or math.isnan(latitude) or math.isnan(longitude):
@@ -30,21 +30,10 @@ def get_sunshine_duration(latitude, longitude):
     # Fetch data
     response = requests.get(url, params=params).json()
 
-    if 'daily' in response and 'sunshine_duration' in response['daily']:
-        sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
-        # Calculate and print average if there is any sunshine duration data
-        if sunshine_duration:
-            average = sum(sunshine_duration) / len(sunshine_duration)
-            return average
-        else:
-            return None
+    sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
+    # Calculate and print average if there is any sunshine duration data
+    if sunshine_duration:
+        average = sum(sunshine_duration) / len(sunshine_duration)
+        return average
     else:
-        # Print/log error or handle the missing key scenario
-        print("Error: 'daily' or 'sunshine_duration' key is missing in the response.")
         return None
-    
-    #sunshine_duration = [x for x in response["daily"]["sunshine_duration"] if x is not None]
-
-    # Calculate and print average
-    #average = sum(sunshine_duration) / len(sunshine_duration)
-    #return average
