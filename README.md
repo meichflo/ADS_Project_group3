@@ -1,7 +1,7 @@
 # 🏠 ADS_Project_group3
 
-![Swiss House](resources\Peach-Tree-House.jpg) 
-
+![Swiss House](resources\Peach-Tree-House.png) 
+Source: [Image Source](https://archivaldesigns.com/collections/all/products/peach-tree-ii-house-plan?view=new2), Retrieved April 29, 2024
 ---
 
 ## 🎯 Project Overview
