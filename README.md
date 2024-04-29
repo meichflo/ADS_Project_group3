@@ -1,18 +1,6 @@
 # 🏠 ADS_Project_group3
 
-![Swiss House](https://archivaldesigns.com/cdn/shop/products/Peach-Tree-Front_1200x.jpg?v=1648224612) <!-- Replace banner-image-link with your actual image link -->
-
----
-
-## 👋 Meet the Team
-
-> "Great things in business are never done by one person; they're done by a team of people." – Steve Jobs
-
-- **Tobias** - Passionate about data and its power to change the world.
-- **Sascha** - A wizard in data analysis and visualization.
-- **Florian** - Enthusiastic about machine learning and its applications in solving real-world problems.
-
-We are Tobias, Sascha, and Florian, eager learners and explorers in the vast ocean of data science.
+![Swiss House](resources\Peach-Tree-House.jpg) 
 
 ---
 
@@ -28,6 +16,18 @@ In this project, our voyage is set towards **predicting house prices from web-sc
 - **Model Evaluation:** Testing the integrity and performance of our creation.
 
 We're armed with Python and its mighty libraries—**Pandas** for our logbooks, **NumPy** for our calculations, and **Scikit-learn** for our navigation tools.
+
+---
+
+## 👋 Meet the Team
+
+> "Great things in business are never done by one person; they're done by a team of people." – Steve Jobs
+
+We are Tobias, Sascha, and Florian, eager learners and explorers in the vast ocean of data science.
+
+- **Tobias** - Passionate about data and its power to change the world.
+- **Sascha** - A wizard in data analysis and visualization.
+- **Florian** - Enthusiastic about machine learning and its applications in solving real-world problems.
 
 ---
 
