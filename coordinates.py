@@ -6,6 +6,8 @@ import requests
 import pandas as pd
 from math import radians, cos, sin, sqrt, atan2
 
+
+
 def get_coordinates(address):
     """Takes an address as an argument.
     Returns the latitude and longitude of the address.
@@ -23,3 +25,5 @@ def get_coordinates(address):
     except (IndexError, KeyError):
         Latitude, Longitude = None, None
     return Latitude, Longitude  # return a tuple
+
+
