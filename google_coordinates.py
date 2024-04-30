@@ -1,4 +1,5 @@
 import googlemaps
+#activeate the google maps api in the google cloud console: https://cloud.google.com/service-usage/docs/enable-disable?hl=de
 
 # API keys from gitignored file
 from keys import keyFlorian
@@ -6,7 +7,7 @@ from keys import keyFlorian
 def get_google_coordinates(address):
     """Takes an address as an argument.
     Returns latitude and longitude as tuple.
-    Make sure to have a valid Google API key in the keys.py file.
+    Make sure to have defined a valid Google API key in the keys.py file.
     """
     print("Getting coordinates for: ", address)
     try:
