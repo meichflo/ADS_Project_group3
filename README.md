@@ -1,6 +1,6 @@
 # 🏠 ADS_Project_group3
 
-🤿Dive [**here**.](immo-project.ipynb) into our project.
+🤿Dive [**here**](immo-project.ipynb) into our project.
 
 ![Family house during golden hour.](https://archivaldesigns.com/cdn/shop/products/Peach-Tree-Front_1200x.jpg?v=1648224612)
 
